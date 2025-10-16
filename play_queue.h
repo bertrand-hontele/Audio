@@ -48,6 +48,7 @@ public:
 	uint32_t playBuffer(void);
 	void stop(void);
 	void setMaxBuffers(uint8_t);
+	int buffersInUse(void);
 	//bool isPlaying(void) { return playing; }
 	virtual void update(void);
 	enum behaviour_e {ORIGINAL,NON_STALLING};
