@@ -232,3 +232,15 @@ void AudioPlayQueue::update(void)
 	}
 }
 
+int AudioPlayQueue::buffersInUse(void)
+{
+	int8_t r=0;
+	uint8_t h = head;
+	uint8_t t = tail;
+	if (h==head && t==tail)
+	{
+		r=h-t;
+		if(r<0) r=r+max_buffers;
+	}
+	return r;
+}
